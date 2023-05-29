@@ -22,7 +22,7 @@ export const projectApi = createApi({
         url: `/categories/${query}`,
       })
     }),
-
+sdfsdfdffffdsf
 
   })
 
