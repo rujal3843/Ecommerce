@@ -19,13 +19,16 @@ export const projectApi = createApi({
 
     getCategory: builder.query({
       query: (query)=>({
-        url: `/categories/${query}`,
+        url: `/categories/${query}/products`,
       })
     }),
- 
+
+    // getCategory: builder.query({
+    //   query: (category) => `products/?category=${category}`,
+    // }),
 
   })
 
 });
 
-export const {useGetDetailQuery,useGetSingleQuery,useGetCategoryQuery} = projectApi;
+export const {useGetDetailQuery,useGetSingleQuery,useGetCategoryQuery,useAddProductMutation} = projectApi;

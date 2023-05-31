@@ -4,6 +4,7 @@ import { Home } from './Pages/Home'
 import { Header } from './component/Header'
 import { Single } from './Pages/Single'
 import { Category } from './Pages/Category'
+import { Login } from './Pages/Login'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path='single/:id' element={<Single />} />
         <Route path='cate/:Category' element={<Category />} />
+        <Route path='login' element={<Login />} />
 
 
       </Routes>
