@@ -4,20 +4,26 @@ import { useGetCategoryQuery } from '../app/Project_Api';
 
 export const Category = () => {
   const { Category } = useParams();
-  const { data } = useGetCategoryQuery(Category);
+  const { data, isLoading } = useGetCategoryQuery(Category);
+
+  if (isLoading) return <div>Loading.............</div>
 
   return (
     <>
-      {data && (
-        <div key={data.id}>
-          <h1>{data.name}</h1>
-          <img src={data.images} alt='' className='h-[540px] ml-10 mt-5 shadow-lg hover:scale-105 ease-in duration-300 cursor-pointer' />
-          <p className='mt-5'>CreateAt: {data.creationAt}</p>
-          <p className='mt-5'>UpdateAt: {data.updatedAt}</p>
-        </div>
-      )}
+<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-5'>
+      {data &&
+        data?.map((detail) => {
+          return (
+            <div  className='shadow-2xl hover:scale-105 ease-in duration-300 cursor-pointer' >
 
+              <img src={detail.images} alt='' className='h-[200px]' />
+              <h1 className=' text-center'>{detail.title}</h1>
+              <p className='font-bold'>Rs. {detail.price}</p>
 
+            </div>
+          );
+        })}
+    </div>
 
     </>
   )

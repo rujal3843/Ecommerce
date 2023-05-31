@@ -16,20 +16,22 @@ export const Header = () => {
 
       {/* menu */}
 
-      <ul className='hidden md:flex'>
+      <ul className='hidden md:flex justify-evenly'>
 
         <li className="relative group">
 
           <NavLink to='#' className='hover:bg-pink-500' >Category</NavLink>
           <ul className="absolute z-50 opacity-0 pointer-events-none transition duration-300 ease-in-out group-hover:opacity-100 group-hover:pointer-events-auto w-max bg-slate-600">
-            <li> <NavLink to='/cate/1' className='hover:bg-pink-500'  >Clothers</NavLink></li>
-            <li> <NavLink to='/cate/2' className='hover:bg-pink-500' >Electronics</NavLink></li>
-            <li><NavLink to='/cate/3' className='hover:bg-pink-500' >AZ</NavLink></li>
-            <li><NavLink to='/cate/4' className='hover:bg-pink-500' >shoes</NavLink></li>
+            <li> <NavLink to='/cate/1' className='hover:bg-pink-500'  >1</NavLink></li>
+            <li> <NavLink to='/cate/2' className='hover:bg-pink-500' >2</NavLink></li>
+            <li>  <NavLink to="/cate/3" className="hover:bg-pink-500">3</NavLink></li>
+            <li><NavLink to="/cate/4" className='hover:bg-pink-500' >4</NavLink></li>
           </ul>
         </li>
+        
+        <li><NavLink to='/addProduct'>Add</NavLink></li>
+        <li><NavLink to='/login'>Login</NavLink></li>
 
-  
       </ul>
 
 
